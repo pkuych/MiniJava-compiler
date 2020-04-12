@@ -6,6 +6,7 @@ import symbol.MType;
 import syntaxtree.Node;
 import typecheck.ErrorPrinter;
 import visitor.BuildSymbolTableVisitor;
+import visitor.MiniJava2PigletVistor;
 import visitor.TypeCheckVisitor;
 
 /**
@@ -19,7 +20,8 @@ public class Main {
             Node root = new MiniJavaParser(in).Goal();
             MType allClassList = new MClassList();
             root.accept(new BuildSymbolTableVisitor(), allClassList);
-            root.accept(new TypeCheckVisitor(), allClassList);
+            root.accept(new MiniJava2PigletVistor((MClassList) allClassList), null);
+            //root.accept(new TypeCheckVisitor(), allClassList);
             //ErrorPrinter.printResult();
         } catch (ParseException e) {
             e.printStackTrace();
