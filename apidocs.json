@@ -1,0 +1,1354 @@
+{
+ "swagger": "2.0",
+ "info": {
+     "description": "This is description.",
+     "title": "title API",
+      "termsOfService": "http://www.pipigx.com/terms/",
+      "contact": {
+         "name": "API Support",
+         "url": "http://www.pipigx.com/support",
+         "email": "support@pipigx.com"
+      },
+      "version": "1.0"
+ },
+ "host": "127.0.0.1:40528",
+ "basePath": "",
+ "paths": {
+ "/api/hello": {
+   "post": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "feedback"
+    ],
+    "summary": "Insert multiple feedback.",
+    "operationId": "insertFeedback",
+    "parameters": [
+     { 
+      "description": "xxx",
+      "name": "xx",
+      "in": "body",
+      "required": true,
+      "schema":  {
+       "$ref": "#/definitions/data.LicenseNumber"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/town/httpapi/generate_license_number": {
+   "post": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "feedback"
+    ],
+    "summary": "Insert multiple feedback.",
+    "operationId": "insertFeedback",
+    "parameters": [
+     { 
+      "description": "xxx",
+      "name": "xx",
+      "in": "body",
+      "required": true,
+      "schema":  {
+       "$ref": "#/definitions/data.LicenseNumber"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/feedback/{feedback-type}": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "feedback"
+    ],
+    "summary": "Get multiple feedback with feedback type.",
+    "operationId": "getTypedFeedback",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "feedback type",
+      "name": "feedback-type",
+      "in": "path",
+      "required": true
+     },
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "string",
+      "description": "cursor for next page",
+      "name": "cursor",
+      "in": "query"
+     },
+     {
+      "type": "integer",
+      "description": "number of returned feedback",
+      "name": "n",
+      "in": "query"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/feedback/{feedback-type}/{user-id}/{item-id}": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "feedback"
+    ],
+    "summary": "Get feedback between a user and a item with feedback type.",
+    "operationId": "getTypedUserItemFeedback",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "feedback type",
+      "name": "feedback-type",
+      "in": "path",
+      "required": true
+     },
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "string",
+      "description": "identifier of the user",
+      "name": "user-id",
+      "in": "path",
+      "required": true
+     },
+     {
+      "type": "string",
+      "description": "identifier of the item",
+      "name": "item-id",
+      "in": "path",
+      "required": true
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   },
+   "delete": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "feedback"
+    ],
+    "summary": "Delete feedback between a user and a item with feedback type.",
+    "operationId": "deleteTypedUserItemFeedback",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "feedback type",
+      "name": "feedback-type",
+      "in": "path",
+      "required": true
+     },
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "string",
+      "description": "identifier of the user",
+      "name": "user-id",
+      "in": "path",
+      "required": true
+     },
+     {
+      "type": "string",
+      "description": "identifier of the item",
+      "name": "item-id",
+      "in": "path",
+      "required": true
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/feedback/{user-id}/{item-id}": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "feedback"
+    ],
+    "summary": "Get feedback between a user and a item.",
+    "operationId": "getUserItemFeedback",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "string",
+      "description": "identifier of the user",
+      "name": "user-id",
+      "in": "path",
+      "required": true
+     },
+     {
+      "type": "string",
+      "description": "identifier of the item",
+      "name": "item-id",
+      "in": "path",
+      "required": true
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   },
+   "delete": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "feedback"
+    ],
+    "summary": "Delete feedback between a user and a item.",
+    "operationId": "deleteUserItemFeedback",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "string",
+      "description": "identifier of the user",
+      "name": "user-id",
+      "in": "path",
+      "required": true
+     },
+     {
+      "type": "string",
+      "description": "identifier of the item",
+      "name": "item-id",
+      "in": "path",
+      "required": true
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/intermediate/recommend/{user-id}": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "intermediate"
+    ],
+    "summary": "get the collaborative filtering recommendation for a user",
+    "operationId": "getCollaborative",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "string",
+      "description": "identifier of the user",
+      "name": "user-id",
+      "in": "query"
+     },
+     {
+      "type": "int",
+      "description": "number of returned items",
+      "name": "n",
+      "in": "query"
+     },
+     {
+      "type": "int",
+      "description": "offset of the list",
+      "name": "offset",
+      "in": "query"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/item": {
+   "post": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "item"
+    ],
+    "summary": "Insert an item.",
+    "operationId": "insertItem",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "required": true,
+      "schema": {
+       "$ref": "#/definitions/data.Item"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/item/{item-id}": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "item"
+    ],
+    "summary": "Get a item.",
+    "operationId": "getItem",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "int",
+      "description": "identifier of the item",
+      "name": "item-id",
+      "in": "path",
+      "required": true
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   },
+   "delete": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "item"
+    ],
+    "summary": "Delete a item.",
+    "operationId": "deleteItem",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "string",
+      "description": "identified of the item",
+      "name": "item-id",
+      "in": "path",
+      "required": true
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/item/{item-id}/feedback": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "feedback"
+    ],
+    "summary": "Get feedback by item id.",
+    "operationId": "getFeedbackByItem",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "string",
+      "description": "identifier of the item",
+      "name": "item-id",
+      "in": "path",
+      "required": true
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/item/{item-id}/feedback/{feedback-type}": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "feedback"
+    ],
+    "summary": "Get feedback by item id with feedback type.",
+    "operationId": "getTypedFeedbackByItem",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "string",
+      "description": "identifier of the item",
+      "name": "item-id",
+      "in": "path",
+      "required": true
+     },
+     {
+      "type": "strung",
+      "description": "feedback type",
+      "name": "feedback-type",
+      "in": "path",
+      "required": true
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/items": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "item"
+    ],
+    "summary": "Get items.",
+    "operationId": "getItems",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "int",
+      "description": "number of returned items",
+      "name": "n",
+      "in": "query"
+     },
+     {
+      "type": "string",
+      "description": "cursor for next page",
+      "name": "cursor",
+      "in": "query"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   },
+   "post": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "item"
+    ],
+    "summary": "Insert items.",
+    "operationId": "insertItems",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "required": true,
+      "schema": {
+       "type": "array",
+       "items": {
+        "$ref": "#/definitions/data.Item"
+       }
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/latest": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "recommendation"
+    ],
+    "summary": "get latest items",
+    "operationId": "getLatest",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "int",
+      "description": "number of returned items",
+      "name": "n",
+      "in": "query"
+     },
+     {
+      "type": "int",
+      "description": "offset of the list",
+      "name": "offset",
+      "in": "query"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/latest/{label}": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "recommendation"
+    ],
+    "summary": "get latest items",
+    "operationId": "getLabelLatest",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "int",
+      "description": "number of returned items",
+      "name": "n",
+      "in": "query"
+     },
+     {
+      "type": "int",
+      "description": "offset of the list",
+      "name": "offset",
+      "in": "query"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/measurements/{name}": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "measurements"
+    ],
+    "summary": "Get measurements",
+    "operationId": "getMeasurements",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "int",
+      "description": "number of returned items",
+      "name": "n",
+      "in": "query"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/neighbors/{item-id}": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "recommendation"
+    ],
+    "summary": "get neighbors of a item",
+    "operationId": "getNeighbors",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "string",
+      "description": "identifier of the item",
+      "name": "item-id",
+      "in": "query"
+     },
+     {
+      "type": "int",
+      "description": "number of returned items",
+      "name": "n",
+      "in": "query"
+     },
+     {
+      "type": "int",
+      "description": "offset of the list",
+      "name": "offset",
+      "in": "query"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/popular": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "recommendation"
+    ],
+    "summary": "get popular items",
+    "operationId": "getPopular",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "int",
+      "description": "number of returned items",
+      "name": "n",
+      "in": "query"
+     },
+     {
+      "type": "int",
+      "description": "offset of the list",
+      "name": "offset",
+      "in": "query"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/popular/{label}": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "recommendation"
+    ],
+    "summary": "get popular items",
+    "operationId": "getLabelPopular",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "int",
+      "description": "number of returned items",
+      "name": "n",
+      "in": "query"
+     },
+     {
+      "type": "int",
+      "description": "offset of the list",
+      "name": "offset",
+      "in": "query"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/recommend/{user-id}": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "recommendation"
+    ],
+    "summary": "Get recommendation for user.",
+    "operationId": "getRecommend",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "string",
+      "description": "identifier of the user",
+      "name": "user-id",
+      "in": "path",
+      "required": true
+     },
+     {
+      "type": "string",
+      "description": "write recommendation back to feedback",
+      "name": "write-back",
+      "in": "query"
+     },
+     {
+      "type": "int",
+      "description": "number of returned items",
+      "name": "n",
+      "in": "query"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/user": {
+   "post": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "user"
+    ],
+    "summary": "Insert a user.",
+    "operationId": "insertUser",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "required": true,
+      "schema": {
+       "$ref": "#/definitions/data.User"
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/user/{user-id}": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "user"
+    ],
+    "summary": "Get a user.",
+    "operationId": "getUser",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "string",
+      "description": "identifier of the user",
+      "name": "user-id",
+      "in": "path",
+      "required": true
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   },
+   "delete": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "user"
+    ],
+    "summary": "Delete a user.",
+    "operationId": "deleteUser",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "string",
+      "description": "identifier of the user",
+      "name": "user-id",
+      "in": "path",
+      "required": true
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/user/{user-id}/feedback": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "feedback"
+    ],
+    "summary": "Get feedback by user id.",
+    "operationId": "getFeedbackByUser",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "string",
+      "description": "identifier of the user",
+      "name": "user-id",
+      "in": "path",
+      "required": true
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/user/{user-id}/feedback/{feedback-type}": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "feedback"
+    ],
+    "summary": "Get feedback by user id with feedback type.",
+    "operationId": "getTypedFeedbackByUser",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "string",
+      "description": "identifier of the user",
+      "name": "user-id",
+      "in": "path",
+      "required": true
+     },
+     {
+      "type": "string",
+      "description": "feedback type",
+      "name": "feedback-type",
+      "in": "path",
+      "required": true
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  },
+  "/api/users": {
+   "get": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "user"
+    ],
+    "summary": "Get users.",
+    "operationId": "getUsers",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "type": "int",
+      "description": "number of returned users",
+      "name": "n",
+      "in": "query"
+     },
+     {
+      "type": "string",
+      "description": "cursor for next page",
+      "name": "cursor",
+      "in": "query"
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   },
+   "post": {
+    "consumes": [
+     "application/json"
+    ],
+    "produces": [
+     "application/json"
+    ],
+    "tags": [
+     "user"
+    ],
+    "summary": "Insert users.",
+    "operationId": "insertUsers",
+    "parameters": [
+     {
+      "type": "string",
+      "description": "secret key for RESTful API",
+      "name": "X-API-Key",
+      "in": "header"
+     },
+     {
+      "name": "body",
+      "in": "body",
+      "required": true,
+      "schema": {
+       "type": "array",
+       "items": {
+        "$ref": "#/definitions/data.User"
+       }
+      }
+     }
+    ],
+    "responses": {
+     "200": {
+      "description": "OK"
+     }
+    }
+   }
+  }
+ },
+ "definitions": {
+  "data.LicenseNumber": {
+   "properties": {
+    "id": {
+     "type": "integer"
+    },
+    "province": {
+     "type": "string"
+    },
+    "city": {
+     "type": "string"
+    }
+   }
+  },
+  "data.Feedback": {
+   "required": [
+    "FeedbackType",
+    "UserId",
+    "ItemId",
+    "Timestamp",
+    "Comment"
+   ],
+   "properties": {
+    "Comment": {
+     "type": "string"
+    },
+    "FeedbackType": {
+     "type": "string"
+    },
+    "ItemId": {
+     "type": "string"
+    },
+    "Timestamp": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "UserId": {
+     "type": "string"
+    }
+   }
+  },
+  "data.FeedbackKey": {
+   "required": [
+    "FeedbackType",
+    "UserId",
+    "ItemId"
+   ],
+   "properties": {
+    "FeedbackType": {
+     "type": "string"
+    },
+    "ItemId": {
+     "type": "string"
+    },
+    "UserId": {
+     "type": "string"
+    }
+   }
+  },
+  "data.Item": {
+   "required": [
+    "ItemId",
+    "Timestamp",
+    "Labels",
+    "Comment"
+   ],
+   "properties": {
+    "Comment": {
+     "type": "string"
+    },
+    "ItemId": {
+     "type": "string"
+    },
+    "Labels": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "Timestamp": {
+     "type": "string",
+     "format": "date-time"
+    }
+   }
+  },
+  "data.Measurement": {
+   "required": [
+    "Name",
+    "Timestamp",
+    "Value",
+    "Comment"
+   ],
+   "properties": {
+    "Comment": {
+     "type": "string"
+    },
+    "Name": {
+     "type": "string"
+    },
+    "Timestamp": {
+     "type": "string",
+     "format": "date-time"
+    },
+    "Value": {
+     "type": "number",
+     "format": "float"
+    }
+   }
+  },
+  "data.User": {
+   "required": [
+    "UserId",
+    "Labels",
+    "Subscribe",
+    "Comment"
+   ],
+   "properties": {
+    "Comment": {
+     "type": "string"
+    },
+    "Labels": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "Subscribe": {
+     "type": "array",
+     "items": {
+      "type": "string"
+     }
+    },
+    "UserId": {
+     "type": "string"
+    }
+   }
+  },
+  "server.FeedbackIterator": {
+   "required": [
+    "Cursor",
+    "Feedback"
+   ],
+   "properties": {
+    "Cursor": {
+     "type": "string"
+    },
+    "Feedback": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/data.Feedback"
+     }
+    }
+   }
+  },
+  "server.ItemIterator": {
+   "required": [
+    "Cursor",
+    "Items"
+   ],
+   "properties": {
+    "Cursor": {
+     "type": "string"
+    },
+    "Items": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/data.Item"
+     }
+    }
+   }
+  },
+  "server.Success": {
+   "required": [
+    "RowAffected"
+   ],
+   "properties": {
+    "RowAffected": {
+     "type": "integer",
+     "format": "int32"
+    }
+   }
+  },
+  "server.UserIterator": {
+   "required": [
+    "Cursor",
+    "Users"
+   ],
+   "properties": {
+    "Cursor": {
+     "type": "string"
+    },
+    "Users": {
+     "type": "array",
+     "items": {
+      "$ref": "#/definitions/data.User"
+     }
+    }
+   }
+  }
+ }
+}
