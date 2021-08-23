@@ -9,22 +9,18 @@
     {
       "name": "公共分类",
       "description": "公共分类"
-    },
-    {
-      "name": "测试tag",
-      "description": null
     }
   ],
   "schemes": [
     "http"
   ],
   "paths": {
-    "/api/path2": {
+    "/api/path3": {
       "post": {
         "tags": [
           "公共分类"
         ],
-        "summary": "test",
+        "summary": "增加一个接口",
         "description": "测试增加一个接口",
         "consumes": [
           "application/json"
