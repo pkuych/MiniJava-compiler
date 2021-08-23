@@ -9,6 +9,10 @@
     {
       "name": "公共分类",
       "description": "公共分类"
+    },
+    {
+      "name": "新分类",
+      "description": "1"
     }
   ],
   "schemes": [
