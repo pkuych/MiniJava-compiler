@@ -19,13 +19,13 @@
     "http"
   ],
   "paths": {
-    "/api/path4": {
+    "/api/path41": {
       "post": {
         "tags": [
-          "新分类"
+          "公共分类"
         ],
-        "summary": "增加一个新分类的接口",
-        "description": "测试增加一个接口",
+        "summary": "增加一个新分类的接口1",
+        "description": "测试增加一个接口1",
         "consumes": [
           "application/json"
         ],
