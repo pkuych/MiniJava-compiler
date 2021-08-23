@@ -9,23 +9,19 @@
     {
       "name": "公共分类",
       "description": "公共分类"
-    },
-    {
-      "name": "新分类",
-      "description": "1"
     }
   ],
   "schemes": [
     "http"
   ],
   "paths": {
-    "/api/path41": {
+    "/api/path412": {
       "post": {
         "tags": [
-          "公共分类"
+          "分类"
         ],
-        "summary": "增加一个新分类的接口1",
-        "description": "测试增加一个接口1",
+        "summary": "增加一个新分类的接口12",
+        "description": "测试增加一个接口12",
         "consumes": [
           "application/json"
         ],
