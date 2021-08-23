@@ -18,9 +18,9 @@
     "/api/path3": {
       "post": {
         "tags": [
-          "公共分类"
+          "新分类"
         ],
-        "summary": "增加一个接口",
+        "summary": "增加一个新分类的接口",
         "description": "测试增加一个接口",
         "consumes": [
           "application/json"
