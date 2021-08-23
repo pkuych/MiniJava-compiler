@@ -1,0 +1,70 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "test3",
+    "version": "last"
+  },
+  "basePath": "/",
+  "tags": [
+    {
+      "name": "公共分类",
+      "description": "公共分类"
+    },
+    {
+      "name": "测试tag",
+      "description": null
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/api/path2": {
+      "post": {
+        "tags": [
+          "公共分类"
+        ],
+        "summary": "test",
+        "description": "测试增加一个接口",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "root",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "title": "empty object",
+              "properties": {
+                "h_m": {
+                  "type": "string"
+                }
+              },
+              "required": [
+                "h_m"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "title": "empty object",
+              "properties": {
+                "ret": {
+                  "type": "integer"
+                }
+              },
+              "required": [
+                "ret"
+              ]
+            }
+          }
+        }
+      }
+    }
+  }
+}
