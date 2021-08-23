@@ -9,17 +9,13 @@
     {
       "name": "公共分类",
       "description": "公共分类"
-    },
-    {
-      "name": "新分类",
-      "description": "1"
     }
   ],
   "schemes": [
     "http"
   ],
   "paths": {
-    "/api/path3": {
+    "/api/path4": {
       "post": {
         "tags": [
           "新分类"
