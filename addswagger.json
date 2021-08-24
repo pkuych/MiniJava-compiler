@@ -9,23 +9,19 @@
     {
       "name": "公共分类",
       "description": "公共分类"
-    },
-    {
-      "name":"分类",
-      "description":"分类"
     }
   ],
   "schemes": [
     "http"
   ],
   "paths": {
-    "/api/path412": {
+    "/api/path": {
       "post": {
         "tags": [
-          "分类"
+          "公共分类"
         ],
-        "summary": "增加一个新分类的接口12",
-        "description": "测试增加一个接口12",
+        "summary": "接口名",
+        "descrition": "接口描述",
         "consumes": [
           "application/json"
         ],
@@ -49,17 +45,17 @@
         ],
         "responses": {
           "200": {
-            "description": "successful operation",
+            "descrition": "successful operation",
             "schema": {
               "type": "object",
               "title": "empty object",
               "properties": {
-                "ret": {
-                  "type": "integer"
+                "h_m": {
+                  "type": "string"
                 }
               },
               "required": [
-                "ret"
+                "h_m"
               ]
             }
           }
