@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "test3",
+    "title": "test5",
     "version": "last"
   },
   "basePath": "/",
@@ -15,13 +15,13 @@
     "http"
   ],
   "paths": {
-    "/api/path": {
+    "/apipath": {
       "post": {
         "tags": [
           "公共分类"
         ],
         "summary": "接口名",
-        "descrition": "接口描述",
+        "description": "",
         "consumes": [
           "application/json"
         ],
@@ -33,29 +33,29 @@
               "type": "object",
               "title": "empty object",
               "properties": {
-                "h_m": {
+                "ret": {
                   "type": "string"
                 }
               },
               "required": [
-                "h_m"
+                "ret"
               ]
             }
           }
         ],
         "responses": {
           "200": {
-            "descrition": "successful operation",
+            "description": "successful operation",
             "schema": {
               "type": "object",
               "title": "empty object",
               "properties": {
-                "h_m": {
+                "ret": {
                   "type": "string"
                 }
               },
               "required": [
-                "h_m"
+                "ret"
               ]
             }
           }
