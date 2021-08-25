@@ -15,13 +15,13 @@
     "http"
   ],
   "paths": {
-    "/apipath": {
+    "/test_service/get_exam_result": {
       "post": {
         "tags": [
           "公共分类"
         ],
         "summary": "接口名",
-        "description": "",
+        "description": "接口描述",
         "consumes": [
           "application/json"
         ],
@@ -33,12 +33,76 @@
               "type": "object",
               "title": "empty object",
               "properties": {
-                "ret": {
+                "OS": {
+                  "properties": {},
+                  "type": "object"
+                },
+                "h_app": {
+                  "type": "string"
+                },
+                "h_av": {
+                  "type": "string"
+                },
+                "h_ch": {
+                  "type": "string"
+                },
+                "h_did": {
+                  "type": "string"
+                },
+                "h_dt": {
+                  "type": "integer"
+                },
+                "h_m": {
+                  "type": "integer"
+                },
+                "h_model": {
+                  "type": "string"
+                },
+                "h_nt": {
+                  "type": "integer"
+                },
+                "h_ts": {
+                  "type": "integer"
+                },
+                "lat": {
+                  "type": "number"
+                },
+                "lon": {
+                  "type": "number"
+                },
+                "scenes_type": {
+                  "type": "integer"
+                },
+                "status": {
+                  "items": {
+                    "type": "integer"
+                  },
+                  "type": "array"
+                },
+                "token": {
+                  "type": "string"
+                },
+                "type": {
                   "type": "string"
                 }
               },
               "required": [
-                "ret"
+                "h_av",
+                "h_dt",
+                "h_m",
+                "h_ch",
+                "h_model",
+                "h_did",
+                "h_nt",
+                "OS",
+                "h_app",
+                "h_ts",
+                "scenes_type",
+                "token",
+                "lat",
+                "lon",
+                "type",
+                "status"
               ]
             }
           }
@@ -49,14 +113,223 @@
             "schema": {
               "type": "object",
               "title": "empty object",
+              "properties": {},
+              "required": []
+            }
+          }
+        }
+      }
+    },
+    "/test_service/get_question": {
+      "post": {
+        "tags": [
+          "公共分类"
+        ],
+        "summary": "接口名",
+        "description": "接口描述",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "root",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "title": "empty object",
               "properties": {
-                "ret": {
+                "OS": {
+                  "properties": {},
+                  "type": "object"
+                },
+                "h_app": {
+                  "type": "string"
+                },
+                "h_av": {
+                  "type": "string"
+                },
+                "h_ch": {
+                  "type": "string"
+                },
+                "h_did": {
+                  "type": "string"
+                },
+                "h_dt": {
+                  "type": "integer"
+                },
+                "h_m": {
+                  "type": "integer"
+                },
+                "h_model": {
+                  "type": "string"
+                },
+                "h_nt": {
+                  "type": "integer"
+                },
+                "h_ts": {
+                  "type": "integer"
+                },
+                "lat": {
+                  "type": "number"
+                },
+                "lon": {
+                  "type": "number"
+                },
+                "number": {
+                  "type": "integer"
+                },
+                "paper_id": {
+                  "type": "integer"
+                },
+                "scenes_type": {
+                  "type": "integer"
+                },
+                "token": {
+                  "type": "string"
+                },
+                "type": {
                   "type": "string"
                 }
               },
               "required": [
-                "ret"
+                "h_av",
+                "h_dt",
+                "h_m",
+                "h_ch",
+                "h_model",
+                "h_did",
+                "h_nt",
+                "OS",
+                "h_app",
+                "h_ts",
+                "scenes_type",
+                "token",
+                "lat",
+                "lon",
+                "type",
+                "paper_id",
+                "number"
               ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "title": "empty object",
+              "properties": {},
+              "required": []
+            }
+          }
+        }
+      }
+    },
+    "/test_service/submit_question": {
+      "post": {
+        "tags": [
+          "公共分类"
+        ],
+        "summary": "接口名",
+        "description": "接口描述",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "root",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "title": "empty object",
+              "properties": {
+                "OS": {
+                  "properties": {},
+                  "type": "object"
+                },
+                "h_app": {
+                  "type": "string"
+                },
+                "h_av": {
+                  "type": "string"
+                },
+                "h_ch": {
+                  "type": "string"
+                },
+                "h_did": {
+                  "type": "string"
+                },
+                "h_dt": {
+                  "type": "integer"
+                },
+                "h_m": {
+                  "type": "integer"
+                },
+                "h_model": {
+                  "type": "string"
+                },
+                "h_nt": {
+                  "type": "integer"
+                },
+                "h_ts": {
+                  "type": "integer"
+                },
+                "lat": {
+                  "type": "number"
+                },
+                "lon": {
+                  "type": "number"
+                },
+                "number": {
+                  "type": "integer"
+                },
+                "paper_id": {
+                  "type": "integer"
+                },
+                "scenes_type": {
+                  "type": "integer"
+                },
+                "token": {
+                  "type": "string"
+                },
+                "user_answers": {
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
+                }
+              },
+              "required": [
+                "h_av",
+                "h_dt",
+                "h_m",
+                "h_ch",
+                "h_model",
+                "h_did",
+                "h_nt",
+                "OS",
+                "h_app",
+                "h_ts",
+                "scenes_type",
+                "token",
+                "lat",
+                "lon",
+                "paper_id",
+                "number",
+                "user_answers"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation",
+            "schema": {
+              "type": "object",
+              "title": "empty object",
+              "properties": {},
+              "required": []
             }
           }
         }
