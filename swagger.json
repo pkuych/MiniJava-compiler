@@ -18,7 +18,7 @@
     "/test_service/get_music_template": {
       "post": {
         "tags": [
-          "音乐"
+          "公共分类"
         ],
         "summary": "GetMusicTemplate",
         "description": "接口描述",
