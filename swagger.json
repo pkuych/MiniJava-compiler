@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "test3",
+    "title": "test5",
     "version": "last"
   },
   "basePath": "/",
@@ -18,7 +18,7 @@
     "/test_service/get_music_template": {
       "post": {
         "tags": [
-          "公共分类"
+          "新分类"
         ],
         "summary": "GetMusicTemplate",
         "description": "接口描述",
