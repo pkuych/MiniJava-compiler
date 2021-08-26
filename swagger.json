@@ -1,7 +1,7 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "test5",
+    "title": "test6",
     "version": "last"
   },
   "basePath": "/",
@@ -18,10 +18,10 @@
     "/test_service/get_music_template": {
       "post": {
         "tags": [
-          "新分类"
+          "test_service"
         ],
         "summary": "GetMusicTemplate",
-        "description": "接口描述",
+        "description": "",
         "consumes": [
           "application/json"
         ],
@@ -34,6 +34,7 @@
               "title": "empty object",
               "properties": {
                 "OS": {
+                  "description": " interface字段备注",
                   "properties": {},
                   "type": "object"
                 },
@@ -50,6 +51,7 @@
                   "type": "string"
                 },
                 "h_dt": {
+                  "description": " 数组字段备注",
                   "type": "integer"
                 },
                 "h_m": {
@@ -104,10 +106,10 @@
     "/test_service/mp3_url": {
       "post": {
         "tags": [
-          "公共分类"
+          "test_service"
         ],
         "summary": "Mp3Url",
-        "description": "接口描述",
+        "description": " 接口备注（接口描述）",
         "consumes": [
           "application/json"
         ],
@@ -120,6 +122,7 @@
               "title": "empty object",
               "properties": {
                 "OS": {
+                  "description": " interface字段备注",
                   "properties": {},
                   "type": "object"
                 },
@@ -136,6 +139,7 @@
                   "type": "string"
                 },
                 "h_dt": {
+                  "description": " 数组字段备注",
                   "type": "integer"
                 },
                 "h_m": {
@@ -157,7 +161,11 @@
                   "type": "integer"
                 },
                 "token": {
-                  "type": "string"
+                  "description": " 数组字段备注",
+                  "items": {
+                    "type": "string"
+                  },
+                  "type": "array"
                 }
               },
               "required": [
@@ -194,10 +202,10 @@
     "/test_service/music_list": {
       "post": {
         "tags": [
-          "公共分类"
+          "test_service"
         ],
         "summary": "MusicList",
-        "description": "接口描述",
+        "description": "",
         "consumes": [
           "application/json"
         ],
@@ -210,6 +218,7 @@
               "title": "empty object",
               "properties": {
                 "OS": {
+                  "description": " interface字段备注",
                   "properties": {},
                   "type": "object"
                 },
@@ -226,6 +235,7 @@
                   "type": "string"
                 },
                 "h_dt": {
+                  "description": " 数组字段备注",
                   "type": "integer"
                 },
                 "h_m": {
@@ -288,10 +298,10 @@
     "/test_service/py_love_list": {
       "post": {
         "tags": [
-          "公共分类"
+          "test_service"
         ],
         "summary": "PyLoveList",
-        "description": "接口描述",
+        "description": "",
         "consumes": [
           "application/json"
         ],
@@ -304,6 +314,7 @@
               "title": "empty object",
               "properties": {
                 "OS": {
+                  "description": " interface字段备注",
                   "properties": {},
                   "type": "object"
                 },
@@ -320,6 +331,7 @@
                   "type": "string"
                 },
                 "h_dt": {
+                  "description": " 数组字段备注",
                   "type": "integer"
                 },
                 "h_m": {
@@ -378,10 +390,10 @@
     "/test_service/rec_list": {
       "post": {
         "tags": [
-          "公共分类"
+          "test_service"
         ],
         "summary": "RecList",
-        "description": "接口描述",
+        "description": "",
         "consumes": [
           "application/json"
         ],
@@ -394,6 +406,7 @@
               "title": "empty object",
               "properties": {
                 "OS": {
+                  "description": " interface字段备注",
                   "properties": {},
                   "type": "object"
                 },
@@ -410,6 +423,7 @@
                   "type": "string"
                 },
                 "h_dt": {
+                  "description": " 数组字段备注",
                   "type": "integer"
                 },
                 "h_m": {
@@ -468,10 +482,10 @@
     "/test_service/search": {
       "post": {
         "tags": [
-          "公共分类"
+          "test_service"
         ],
         "summary": "Search",
-        "description": "接口描述",
+        "description": "",
         "consumes": [
           "application/json"
         ],
@@ -484,6 +498,7 @@
               "title": "empty object",
               "properties": {
                 "OS": {
+                  "description": " interface字段备注",
                   "properties": {},
                   "type": "object"
                 },
@@ -500,6 +515,7 @@
                   "type": "string"
                 },
                 "h_dt": {
+                  "description": " 数组字段备注",
                   "type": "integer"
                 },
                 "h_m": {
@@ -562,10 +578,10 @@
     "/test_service/top": {
       "post": {
         "tags": [
-          "公共分类"
+          "test_service"
         ],
         "summary": "Top",
-        "description": "接口描述",
+        "description": " 接口描述   ",
         "consumes": [
           "application/json"
         ],
@@ -578,6 +594,7 @@
               "title": "empty object",
               "properties": {
                 "OS": {
+                  "description": " interface字段备注",
                   "properties": {},
                   "type": "object"
                 },
@@ -594,6 +611,7 @@
                   "type": "string"
                 },
                 "h_dt": {
+                  "description": " 数组字段备注",
                   "type": "integer"
                 },
                 "h_m": {
